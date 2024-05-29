@@ -1,0 +1,28 @@
+{
+	"guitars": [
+		{
+			"brand": "Washburn",
+			"model": "D-12 WH",
+			"type": "Classic",
+			"numberOfStrings": 6
+		},
+		{
+			"brand": "Morgan",
+			"model": "DM 59",
+			"type": "Dobro",
+			"numberOfStrings": 6
+		},
+		{
+			"brand": "RockStar",
+			"model": "Unknown",
+			"type": "Electric",
+			"numberOfStrings": 6
+		},
+		{
+			"brand": "Unknown",
+			"model": "Jysk Guitar",
+			"type": "Classic",
+			"numberOfStrings": 6
+		}
+	]
+}
