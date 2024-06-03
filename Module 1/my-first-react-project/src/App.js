@@ -1,18 +1,28 @@
 import "./App.css";
-import Guitar from "./Components/Guitar";
+import GuitarList from "./Components/GuitarList";
+import { useState } from "react";
 
 function App() {
 	// If we want values to rerender on the UI, we need to declare local pieces of state
 	// We can do this with React HOOKS!
-	let myName = "Morten";
-	let myLastName = "Olsen";
-	let myAge = 34;
+	// let myName = "Morten";
+	// let myLastName = "Olsen";
+	// let myAge = 34;
 
+	// HOOKS
+	const [myName, setMyName] = useState("Morten");
+	const [myLastName, setMyLastName] = useState("Olsen");
+	const [myAge, setMyAge] = useState(34);
+
+	// FUNCTIONS
 	function handleChangePersonDataClick() {
 		console.log("handleChangePersonDataClick() Fired");
-		myName = "John";
-		myLastName = "Smith";
-		myAge = 36;
+		// myName = "John";
+		// myLastName = "Smith";
+		// myAge = 36;
+		setMyName("John");
+		setMyLastName("Smith");
+		setMyAge(36);
 
 		console.log("fName", myName);
 		console.log("lName", myLastName);
@@ -31,7 +41,7 @@ function App() {
 					<li>Age: {myAge}</li>
 				</ul>
 
-				<Guitar />
+				<GuitarList />
 			</div>
 			<button onClick={handleChangePersonDataClick}>Change Person Data</button>
 		</>
