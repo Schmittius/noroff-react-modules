@@ -1,0 +1,15 @@
+header {
+	padding: 5px;
+	background-image: linear-gradient(red, red, red, white, white, blue, white, white, red);
+	display: flex;
+	h1 {
+		text-align: center;
+		/* border: 3px solid black; */
+		/* border-radius: 15px; */
+		padding: 5px;
+		padding-top: 25px;
+	}
+	img {
+		border-radius: 30%;
+	}
+}
