@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { UserContext } from "../Context/UserContext";
 
 function HomePage() {
 	// If we want values to rerender on the UI, we need to declare local pieces of state
@@ -8,16 +10,22 @@ function HomePage() {
 	// let myAge = 34;
 
 	// HOOKS
-	const [myName, setMyName] = useState("Morten");
-	const [myLastName, setMyLastName] = useState("Olsen");
-	const [myAge, setMyAge] = useState(34);
+	// const [myName, setMyName] = useState("");
+	const [myName, setMyName] = useContext(UserContext);
+	const [myLastName, setMyLastName] = useState("");
+	const [myAge, setMyAge] = useState();
+
+	const { message } = useParams();
 
 	function myCallbackFunction() {
 		console.log("myCallbackFunction() fired!");
 	}
 
-	useEffect(myCallbackFunction, [myName]); // empty dependencies = only runs once!
-	useEffect(() => console.log("Anonymous useEffect fired!"), []);
+	useEffect(myCallbackFunction, [myName]);
+	useEffect(() => {
+		console.log("Anonymous useEffect fired!");
+		console.log(message);
+	}, []); // empty dependencies = only runs once!
 
 	// FUNCTIONS
 	function handleChangePersonDataClick() {

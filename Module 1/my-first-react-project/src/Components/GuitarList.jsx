@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Guitar from "./Guitar";
 import { GUITARS_API_URL } from "../utils.js";
+import { UserContext } from "../Context/UserContext.jsx";
 
 function GuitarList() {
 	// HOOKS
 	const [guitars, setGuitars] = useState([]);
+	const [myName, setMyName] = useContext(UserContext);
 
 	useEffect(() => {
 		async function getGuitarData() {
@@ -54,6 +56,7 @@ function GuitarList() {
 	return (
 		// Dynamically render out child Guitar components
 		<>
+			<h3>{myName}</h3>
 			{/* {myGuitars.map((item) => (
 				<Guitar currentGuitar={item} key={item.id} test={"test"} testBool={true} />
 			))} */}
